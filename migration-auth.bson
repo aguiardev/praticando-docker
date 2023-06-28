@@ -1,0 +1,47 @@
+[
+  {
+    "userId": 123456,
+    "name": "João Silva",
+    "login": "joao.silva@example.com",
+    "dateOfBirth": "1993-05-15",
+    "address": {
+      "street": "Rua Principal",
+      "city": "São Paulo",
+      "state": "SP",
+      "country": "Brasil"
+    },
+    "phone": "+55 11 98765-4321",
+    "password": "c2VuaGExMjM=",
+    "createdAt": "2023-06-27T12:00:00Z"
+  },
+  {
+    "userId": 789012,
+    "name": "Maria Souza",
+    "login": "maria.souza@example.com",
+    "dateOfBirth": "1985-10-20",
+    "address": {
+      "street": "Avenida Central",
+      "city": "Rio de Janeiro",
+      "state": "RJ",
+      "country": "Brasil"
+    },
+    "phone": "+55 21 98765-4321",
+    "password": "c2VuaGE0NTY=",
+    "createdAt": "2023-06-27T13:00:00Z"
+  },
+  {
+    "userId": 345678,
+    "name": "Pedro Santos",
+    "login": "pedro.santos@example.com",
+    "dateOfBirth": "1990-12-01",
+    "address": {
+      "street": "Rua da Praia",
+      "city": "Florianópolis",
+      "state": "SC",
+      "country": "Brasil"
+    },
+    "phone": "+55 48 98765-4321",
+    "password": "c2VuaGE3ODk=",
+    "createdAt": "2023-06-27T14:00:00Z"
+  }
+]

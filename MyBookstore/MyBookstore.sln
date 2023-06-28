@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Auth", "Api.Auth\Api.Auth.csproj", "{1297094B-5316-47AD-8A8E-04464497E6AE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{C309CD16-791C-4FDE-8AAA-56A887C1C4EC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{D0FAEA63-0777-439F-A90D-07D9869AF129}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{D585F71F-D6CB-4587-B1C3-B8E0DB2499B7}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\docker-compose.yml = ..\docker-compose.yml
+		..\README.md = ..\README.md
+		..\migration-purchase.sql = ..\migration-purchase.sql
+		..\migration-auth.bson = ..\migration-auth.bson
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Purchase", "Api.Purchase\Api.Purchase.csproj", "{B64D0DAB-5DE3-45F8-8DAB-5D8B27893783}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Auth.Sdk", "Api.Auth.Sdk\Api.Auth.Sdk.csproj", "{1DCE5154-370F-4BD9-9FC3-846D0CDF89DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1297094B-5316-47AD-8A8E-04464497E6AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1297094B-5316-47AD-8A8E-04464497E6AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1297094B-5316-47AD-8A8E-04464497E6AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1297094B-5316-47AD-8A8E-04464497E6AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C309CD16-791C-4FDE-8AAA-56A887C1C4EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C309CD16-791C-4FDE-8AAA-56A887C1C4EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C309CD16-791C-4FDE-8AAA-56A887C1C4EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C309CD16-791C-4FDE-8AAA-56A887C1C4EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0FAEA63-0777-439F-A90D-07D9869AF129}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0FAEA63-0777-439F-A90D-07D9869AF129}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0FAEA63-0777-439F-A90D-07D9869AF129}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0FAEA63-0777-439F-A90D-07D9869AF129}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B64D0DAB-5DE3-45F8-8DAB-5D8B27893783}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B64D0DAB-5DE3-45F8-8DAB-5D8B27893783}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B64D0DAB-5DE3-45F8-8DAB-5D8B27893783}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B64D0DAB-5DE3-45F8-8DAB-5D8B27893783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DCE5154-370F-4BD9-9FC3-846D0CDF89DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DCE5154-370F-4BD9-9FC3-846D0CDF89DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DCE5154-370F-4BD9-9FC3-846D0CDF89DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DCE5154-370F-4BD9-9FC3-846D0CDF89DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7031265-A0C1-446A-B1FA-547A7DD8EDBE}
+	EndGlobalSection
+EndGlobal
