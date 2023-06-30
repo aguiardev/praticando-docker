@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Auth", "Api.Auth\Api.Auth.csproj", "{1297094B-5316-47AD-8A8E-04464497E6AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth.Api", "Auth.Api\Auth.Api.csproj", "{1297094B-5316-47AD-8A8E-04464497E6AE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{C309CD16-791C-4FDE-8AAA-56A887C1C4EC}"
 EndProject
@@ -13,14 +13,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 	ProjectSection(SolutionItems) = preProject
 		..\.gitignore = ..\.gitignore
 		..\docker-compose.yml = ..\docker-compose.yml
-		..\README.md = ..\README.md
-		..\migration-purchase.sql = ..\migration-purchase.sql
 		..\migration-auth.bson = ..\migration-auth.bson
+		..\migration-purchase.sql = ..\migration-purchase.sql
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Purchase", "Api.Purchase\Api.Purchase.csproj", "{B64D0DAB-5DE3-45F8-8DAB-5D8B27893783}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Purchase.Api", "Purchase.Api\Purchase.Api.csproj", "{B64D0DAB-5DE3-45F8-8DAB-5D8B27893783}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Auth.Sdk", "Api.Auth.Sdk\Api.Auth.Sdk.csproj", "{1DCE5154-370F-4BD9-9FC3-846D0CDF89DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth.Api.Sdk", "Auth.Api.Sdk\Auth.Api.Sdk.csproj", "{1DCE5154-370F-4BD9-9FC3-846D0CDF89DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
