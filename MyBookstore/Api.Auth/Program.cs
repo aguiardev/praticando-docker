@@ -41,6 +41,4 @@ app.MapPost("/api/users", async (IUserRepository userRepository) =>
 })
 .WithName("ListAllUsers");
 
-
-
 app.Run();

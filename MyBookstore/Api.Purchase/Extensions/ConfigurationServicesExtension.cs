@@ -1,6 +1,8 @@
 ﻿using Repository;
 using Repository.Connections;
 using Repository.Repositories;
+using Service;
+using Service.Interfaces;
 
 namespace Api.Purchase.Extensions;
 
@@ -23,7 +25,7 @@ public static class ConfigurationServicesExtension
         builder.Services.AddScoped<IPurchaseItemRepository, PurchaseItemRepository>();
 
         // Services
-        //builder.Services.AddScoped<ILoginService, LoginService>();
+        builder.Services.AddScoped<IPurchaseService, PurchaseService>();
 
         return builder.Build();
     }
