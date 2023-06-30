@@ -24,14 +24,8 @@ public static class ConfigurationServicesExtension
             new MongoClient(builder.Configuration.GetConnectionString("UserAuth"))
                 .GetDatabase(builder.Configuration["DatabaseUserAuth"]));
 
-        builder.Services.AddSingleton<ISqlConnection>(
-            new SqlServerConnection(builder.Configuration.GetConnectionString("Purchases")));
-
         // Repositories
         builder.Services.AddScoped<IUserRepository, UserRepository>();
-        builder.Services.AddScoped<IBookRepository, BookRepository>();
-        builder.Services.AddScoped<IPurchaseRepository, PurchaseRepository>();
-        builder.Services.AddScoped<IPurchaseItemRepository, PurchaseItemRepository>();
 
         // Services
         builder.Services.AddScoped<ITokenService, TokenService>();

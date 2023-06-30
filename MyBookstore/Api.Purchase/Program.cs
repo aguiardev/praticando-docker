@@ -1,44 +1,42 @@
-var builder = WebApplication.CreateBuilder(args);
+using Api.Purchase.Extensions;
+using Repository;
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+var app = WebApplication.CreateBuilder(args).ConfigureServices().ConfigureApp();
 
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+app.MapGet("/api/purchases", async (IPurchaseRepository purchaseRepository) =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    var purchases = await purchaseRepository.GetAll();
 
-app.UseHttpsRedirection();
-
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
+    return Results.Ok(purchases);
 })
-.WithName("GetWeatherForecast")
-.WithOpenApi();
+.WithName("ListAllPurchases");
+
+app.MapGet("/api/books", async (IBookRepository bookRepository) =>
+{
+    var books = await bookRepository.GetAll();
+
+    return Results.Ok(books);
+})
+.WithName("ListAllBooks");
+
+app.MapGet("/api/books/id", async (int[] id, IBookRepository bookRepository) =>
+{
+    var books = await bookRepository.GetByFilter(
+        "WHERE BookId IN @BookId",
+        new { BookId = id });
+
+    return Results.Ok(books);
+})
+.WithName("ListBooksById");
+
+app.MapGet("/api/purchases/{id}/items", async (int id, IPurchaseItemRepository purchaseItemRepository) =>
+{
+    var purchaseItems = await purchaseItemRepository.GetByFilter(
+        "WHERE PurchaseId = @PurchaseId",
+        new { PurchaseId = id });
+
+    return Results.Ok(purchaseItems);
+})
+.WithName("ListItemsById");
 
 app.Run();
-
-internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
