@@ -1,4 +1,4 @@
-﻿using Repository.Repositories;
+﻿using Repository;
 using Service.Interfaces;
 
 namespace Service;

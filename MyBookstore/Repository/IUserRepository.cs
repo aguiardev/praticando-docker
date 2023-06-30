@@ -1,6 +1,6 @@
 ﻿using Repository.Entities;
 
-namespace Repository.Repositories;
+namespace Repository;
 
 public interface IUserRepository
 {

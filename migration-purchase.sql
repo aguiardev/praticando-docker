@@ -5,21 +5,20 @@ CREATE DATABASE Bookstore;
 USE Bookstore;
 
 -- Create tables
-CREATE TABLE Purchases (
+CREATE TABLE Purchase (
     PurchaseId INT IDENTITY(1,1) PRIMARY KEY,
     UserId INT,
-    PurchaseDate DATE,
-    TotalPurchase DECIMAL(10, 2)
+    PurchaseDate DATE
 );
 
-CREATE TABLE Books (
+CREATE TABLE Book (
     BookId INT IDENTITY(1,1) PRIMARY KEY,
     Title NVARCHAR(100),
     Author NVARCHAR(50),
     Price DECIMAL(10, 2)
 );
 
-CREATE TABLE PurchaseItems (
+CREATE TABLE PurchaseItem (
     PurchaseItemId INT IDENTITY(1,1) PRIMARY KEY,
     PurchaseId INT,
     BookId INT,
@@ -29,7 +28,7 @@ CREATE TABLE PurchaseItems (
 );
 
 -- Insert test data
-INSERT INTO Books (Title, Author, Price)
+INSERT INTO Book (Title, Author, Price)
 VALUES
   ('Dom Casmurro', 'Machado de Assis', 19.99),
   ('Grande Sertão: Veredas', 'João Guimarães Rosa', 24.99),
@@ -81,173 +80,172 @@ VALUES
   ('O Seminarista', 'Bernardo Guimarães', 24.99),
   ('Quincas Borba', 'Machado de Assis', 22.99);
 
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2005-08-28', 70.0);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2020-04-23', 209.72);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2001-06-17', 184.75);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2018-11-30', 247.17);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2022-03-26', 233.36);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2008-04-06', 127.67);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2016-08-21', 140.6);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2012-11-22', 147.02);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2018-01-28', 162.61);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2023-03-30', 92.44);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2011-10-01', 192.1);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2011-02-05', 52.29);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2013-12-19', 145.13);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2002-07-06', 203.3);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2016-07-31', 92.96);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2023-03-05', 239.13);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2014-10-21', 171.5);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2002-04-08', 136.98);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2012-07-08', 110.98);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2015-08-03', 116.96);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2019-11-08', 62.0);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2000-05-23', 101.88);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2012-08-16', 64.9);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2017-08-09', 58.31);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2017-07-20', 209.43);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2017-08-13', 142.79);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2011-10-04', 50.9);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2004-09-22', 180.78);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2020-06-11', 173.22);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2013-11-13', 71.75);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2005-08-02', 225.33);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2012-01-15', 102.37);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2016-11-21', 135.72);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2000-03-28', 126.82);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2021-04-16', 208.05);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2003-09-03', 77.75);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2001-12-11', 146.24);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2011-05-16', 166.93);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2018-02-21', 204.68);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2020-04-30', 101.97);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2012-05-01', 157.32);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2018-08-21', 163.76);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2011-12-16', 217.13);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2020-05-01', 230.21);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2016-01-28', 88.49);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2017-05-04', 103.22);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2014-01-03', 188.58);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2019-04-29', 146.01);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2005-12-25', 170.15);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2020-11-17', 178.13);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2018-03-06', 187.8);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2022-05-05', 65.16);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2000-07-10', 191.58);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2011-12-04', 243.09);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2018-10-18', 88.45);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2010-11-03', 76.22);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2002-08-13', 153.36);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2003-07-27', 207.45);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2013-02-16', 244.56);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2000-08-11', 195.13);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2001-10-07', 51.05);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2011-08-28', 209.66);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2010-12-06', 215.55);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2006-02-27', 207.13);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2020-05-14', 196.14);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2010-12-23', 224.14);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2000-08-28', 183.44);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2018-08-10', 136.11);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2013-09-01', 145.65);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2017-01-03', 223.96);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2003-01-07', 89.12);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2021-06-23', 199.75);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2021-01-16', 208.08);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2021-03-28', 218.6);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2016-07-24', 185.8);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2019-02-27', 172.56);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2017-03-08', 92.77);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2015-10-27', 244.95);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2010-10-29', 241.57);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2002-04-18', 164.75);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2016-07-02', 70.17);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2008-09-30', 130.16);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2007-04-26', 62.54);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2006-03-25', 141.55);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2019-07-01', 188.79);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2005-07-26', 100.71);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2011-04-26', 62.8);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2007-04-09', 232.47);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2010-12-23', 162.59);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2004-02-22', 202.82);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2002-01-28', 164.52);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2011-02-05', 64.26);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2009-06-22', 235.18);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2011-05-08', 111.92);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2005-02-28', 132.44);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2006-06-04', 145.88);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2018-10-30', 183.87);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (789012, '2012-04-24', 81.68);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2023-04-23', 61.93);
-insert into Purchases (UserId, PurchaseDate, TotalPurchase) values (345678, '2014-09-14', 123.48);
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2005-08-28');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2020-04-23');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2001-06-17');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2018-11-30');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2022-03-26');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2008-04-06');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2016-08-21');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2012-11-22');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2018-01-28');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2023-03-30');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2011-10-01');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2011-02-05');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2013-12-19');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2002-07-06');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2016-07-31');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2023-03-05');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2014-10-21');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2002-04-08');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2012-07-08');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2015-08-03');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2019-11-08');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2000-05-23');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2012-08-16');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2017-08-09');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2017-07-20');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2017-08-13');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2011-10-04');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2004-09-22');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2020-06-11');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2013-11-13');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2005-08-02');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2012-01-15');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2016-11-21');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2000-03-28');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2021-04-16');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2003-09-03');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2001-12-11');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2011-05-16');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2018-02-21');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2020-04-30');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2012-05-01');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2018-08-21');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2011-12-16');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2020-05-01');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2016-01-28');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2017-05-04');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2014-01-03');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2019-04-29');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2005-12-25');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2020-11-17');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2018-03-06');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2022-05-05');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2000-07-10');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2011-12-04');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2018-10-18');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2010-11-03');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2002-08-13');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2003-07-27');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2013-02-16');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2000-08-11');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2001-10-07');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2011-08-28');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2010-12-06');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2006-02-27');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2020-05-14');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2010-12-23');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2000-08-28');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2018-08-10');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2013-09-01');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2017-01-03');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2003-01-07');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2021-06-23');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2021-01-16');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2021-03-28');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2016-07-24');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2019-02-27');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2017-03-08');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2015-10-27');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2010-10-29');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2002-04-18');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2016-07-02');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2008-09-30');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2007-04-26');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2006-03-25');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2019-07-01');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2005-07-26');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2011-04-26');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2007-04-09');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2010-12-23');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2004-02-22');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2002-01-28');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2011-02-05');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2009-06-22');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2011-05-08');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2005-02-28');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2006-06-04');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2018-10-30');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (789012, '2012-04-24');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2023-04-23');
+insert into Purchase (UserId, PurchaseDate, TotalPurchase) values (345678, '2014-09-14');
 
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (97, 42, 53);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (50, 28, 3);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (25, 7, 25);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (84, 15, 43);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (90, 16, 69);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (76, 33, 13);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (23, 29, 55);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (92, 36, 63);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (27, 24, 81);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (5, 19, 31);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (24, 15, 39);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (43, 31, 6);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (46, 35, 70);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (27, 25, 13);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (59, 18, 62);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (98, 3, 77);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (99, 45, 68);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (62, 34, 10);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (46, 12, 57);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (97, 48, 93);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (8, 16, 44);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (95, 2, 33);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (62, 7, 72);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (79, 25, 7);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (71, 29, 84);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (46, 16, 6);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (3, 15, 77);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (81, 38, 4);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (57, 31, 100);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (70, 18, 76);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (39, 1, 100);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (10, 27, 42);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (97, 48, 33);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (57, 4, 48);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (39, 28, 9);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (91, 23, 84);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (80, 36, 31);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (38, 13, 94);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (23, 15, 59);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (16, 46, 49);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (46, 4, 59);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (57, 25, 90);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (14, 16, 31);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (40, 39, 100);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (88, 35, 8);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (63, 43, 49);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (72, 33, 73);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (43, 39, 36);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (95, 3, 50);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (7, 44, 71);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (81, 11, 41);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (7, 17, 59);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (56, 47, 85);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (67, 3, 76);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (67, 28, 19);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (70, 3, 22);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (44, 15, 16);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (50, 36, 23);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (91, 45, 27);
-insert into PurchaseItems (PurchaseId, BookId, Quantity) values (2, 28, 42);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (97, 42, 53);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (50, 28, 3);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (25, 7, 25);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (84, 15, 43);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (90, 16, 69);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (76, 33, 13);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (23, 29, 55);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (92, 36, 63);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (27, 24, 81);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (5, 19, 31);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (24, 15, 39);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (43, 31, 6);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (46, 35, 70);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (27, 25, 13);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (59, 18, 62);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (98, 3, 77);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (99, 45, 68);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (62, 34, 10);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (46, 12, 57);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (97, 48, 93);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (8, 16, 44);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (95, 2, 33);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (62, 7, 72);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (79, 25, 7);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (71, 29, 84);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (46, 16, 6);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (3, 15, 77);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (81, 38, 4);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (57, 31, 100);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (70, 18, 76);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (39, 1, 100);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (10, 27, 42);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (97, 48, 33);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (57, 4, 48);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (39, 28, 9);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (91, 23, 84);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (80, 36, 31);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (38, 13, 94);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (23, 15, 59);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (16, 46, 49);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (46, 4, 59);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (57, 25, 90);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (14, 16, 31);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (40, 39, 100);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (88, 35, 8);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (63, 43, 49);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (72, 33, 73);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (43, 39, 36);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (95, 3, 50);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (7, 44, 71);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (81, 11, 41);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (7, 17, 59);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (56, 47, 85);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (67, 3, 76);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (67, 28, 19);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (70, 3, 22);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (44, 15, 16);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (50, 36, 23);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (91, 45, 27);
+insert into PurchaseItem (PurchaseId, BookId, Quantity) values (2, 28, 42);
 
+--SELECT * FROM PurchaseItem where PurchaseId = 97
+--SELECT * FROM Book where BookId in (42,48)
 
-
-
---select UserId, PurchaseDate, TotalPurchase, Quantity, Title, Author
+--select p.UserId, p.PurchaseDate, Quantity, b.Title, b.Author
 --from Purchases p
 --inner join PurchaseItems pi on pi.PurchaseId = p.PurchaseId
 --inner join Books b on b.BookId = pi.BookId
---order by PurchaseDate;

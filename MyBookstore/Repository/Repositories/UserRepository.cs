@@ -4,7 +4,7 @@ using Repository.Repositories.Base;
 
 namespace Repository.Repositories;
 
-public class UserRepository : NoSqlBaseRepository<User>, IUserRepository
+public class UserRepository : NoSqlDbBaseRepository<User>, IUserRepository
 {
     private const string _collectionName = "users";
 
